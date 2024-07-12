@@ -33,11 +33,11 @@ app.use(cookieParser());
 app.use("/api", userRoute);
 
 // Use the client app
-app.use(express.static(path.join(__dirname, "../client/dist")));
+app.use(express.static(path.join(__dirname, "/client/dist")));
 
 // Render client for any path
 app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "../client/dist/index.html"));
+  res.sendFile(path.join(__dirname, "/client/dist/index.html"));
 });
 
 
