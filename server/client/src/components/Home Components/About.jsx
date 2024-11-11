@@ -1,5 +1,6 @@
 import React from "react";
 import { FaArrowRightLong } from "react-icons/fa6";
+import ResumeDownload from "../../assets/bipin_singh_resume.pdf"
 
 const About = ({ blur, loading }) => {
   return (
@@ -42,7 +43,7 @@ const About = ({ blur, loading }) => {
         </div>
         <div className="flex items-center gap-6 max-sm:flex-col-reverse">
           <div className="flex bg-[#FAAD1B] gap-1  p-1 rounded-full cursor-pointer ">
-            <a href="#project" className="flex-1">
+            <a href={ResumeDownload} download className="flex-1">
               <div className="bg-[#344C36] h-full flex items-center justify-center px-3 rounded-full">
                 <h1 className="text-white  font-semibold text-xl max-sm:text-sm">
                   Download CV
