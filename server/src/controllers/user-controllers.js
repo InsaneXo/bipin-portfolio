@@ -505,34 +505,34 @@ export const logOut = async (req, res) => {
       httpOnly: true,
     };
     const user = await userModel.findById(req.user._id);
-    const randomPassword = generateRandomText(10);
+    // const randomPassword = generateRandomText(10);
 
-    // The random password convert into cipher text
+    // // The random password convert into cipher text
 
-    const passHashing = passwordHashing(randomPassword);
+    // const passHashing = passwordHashing("valorant@vipin123");
 
-    user.password = passHashing;
+    // user.password = passHashing;
 
-    await user.save();
+    // await user.save();
 
-    let message = `Hi Bipin Singh this is your Password: ${randomPassword} to open an Admin Panel`;
+    // let message = `Hi Bipin Singh this is your Password: ${randomPassword} to open an Admin Panel`;
 
-    // Sent Email to the user using email
+    // // Sent Email to the user using email
 
-    try {
-      await sendEmail({
-        email: user.email,
-        subject: "Welcome to Bipin Singh Portfolio",
-        message,
-      });
-    } catch (error) {
-      return res.status(500).json({
-        success: false,
-        message: error.message,
-      });
-    }
+    // try {
+    //   await sendEmail({
+    //     email: user.email,
+    //     subject: "Welcome to Bipin Singh Portfolio",
+    //     message,
+    //   });
+    // } catch (error) {
+    //   return res.status(500).json({
+    //     success: false,
+    //     message: error.message,
+    //   });
+    // }
 
-    res
+    return res
       .status(200)
       .cookie("token", null, option)
       .json({ success: true, message: "Logout Successfully" });
